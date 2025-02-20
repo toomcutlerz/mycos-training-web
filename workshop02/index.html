@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi-Lo Game</title>
+    <link rel="icon" type="image/png" href="images/dice-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- StartScreen section -->
+    <div id="startScreen" class="card">
+      <h1>Welcome to Hi-Lo Dice Game</h1>
+      <div class="container">
+        <label for="playerName">Enter Your Name: </label>
+        <input type="text" id="playerName" />
+      </div>
+      <div class="container">
+        <button id="startGameButton" class="btn-primary" onclick="startGame()">
+          Start Game
+        </button>
+      </div>
+    </div>
+
+    <!-- GameScreen section -->
+    <div id="gameScreen" class="card">
+      <h1>Hi-Lo Dice Game</h1>
+
+      <!-- PlayerInfo section -->
+      <div class="playerInfo-container">
+        <div class="playerInfo-item">
+          <label>Player:</label>
+          <p id="currentPlayerName">User</p>
+        </div>
+        <div class="playerInfo-item">
+          <label>Balance:</label>
+          <p id="currentBalance">0</p>
+          <p>(Coins)</p>
+        </div>
+      </div>
+
+      <!-- Bet amount section -->
+      <div class="bet-amount-container">
+        <label for="bet">Enter Bet Amount: </label>
+        <input type="number" id="bet" min="1" value="10" />
+        <button id="allInButton" class="btn-secondary" onclick="allInBet()">
+          All In
+        </button>
+      </div>
+
+      <!-- Bet buttons section -->
+      <div class="container" id="betButtons">
+        <button id="highBet" class="betButton" onclick="placeBet('high')">
+          Bet High (≥12)
+        </button>
+        <button id="midBet" class="betButton" onclick="placeBet('mid')">
+          Bet Mid (11) (x5)
+        </button>
+        <button id="lowBet" class="betButton" onclick="placeBet('low')">
+          Bet Low (≤10)
+        </button>
+      </div>
+      <div class="container">
+        <button id="rollDiceButton" class="btn-secondary" onclick="rollDice()">
+          Roll Dice
+        </button>
+      </div>
+
+      <!-- Dice section -->
+      <div class="dice-container">
+        <div class="dice-item">
+          <img
+            class="dice"
+            id="dice1"
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg"
+            alt="Dice 1"
+          />
+          <p class="score" id="score1">?</p>
+        </div>
+        <div class="dice-item">
+          <img
+            class="dice"
+            id="dice2"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Dice-2-b.svg"
+            alt="Dice 2"
+          />
+          <p class="score" id="score2">?</p>
+        </div>
+        <div class="dice-item">
+          <img
+            class="dice"
+            id="dice3"
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Dice-3-b.svg"
+            alt="Dice 3"
+          />
+          <p class="score" id="score3">?</p>
+        </div>
+      </div>
+
+      <!-- Reset section -->
+      <div class="result-container">
+        <h2 id="result">Place your bet!</h2>
+        <p id="resultDetail"></p>
+      </div>
+
+      <!-- Exit section -->
+      <div class="container">
+        <button id="exitButton" class="btn-alert" onclick="exitToStart()">
+          Exit
+        </button>
+      </div>
+
+      <!-- Restart section -->
+      <div class="container" id="restartContainer" style="display: none">
+        <button
+          id="restartButton"
+          class="btn-third-color"
+          onclick="restartGame()"
+        >
+          Restart Game
+        </button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

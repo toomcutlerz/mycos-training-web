@@ -1,0 +1,226 @@
+/* styles.css */
+
+@import url("https://fonts.googleapis.com/css?family=Outfit:700,400");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000de;
+  --font-size-l: 22px;
+  --font-size-m: 15px;
+  --font-family-outfit: "Outfit", Helvetica;
+  --text-dark: #1f314f;
+  --text-light: #68778d;
+  --bg-light: #d5e1ef;
+  --primary-color: #007bff;
+  --primary-color-selected: #043a75;
+  --secondary-color: #28a745;
+  --third-color: #ffc107;
+  --warning-color: #dc3545;
+}
+
+body {
+  font-family: var(--font-family-outfit);
+  background: var(--bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.btn-third-color {
+  background-color: var(--third-color);
+  color: var(--black);
+}
+
+.btn-alert {
+  background-color: var(--warning-color);
+  color: var(--white);
+}
+
+.card {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.result-container {
+  flex-direction: column;
+}
+
+label {
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#betButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.betButton {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.betButton.selected {
+  background-color: var(--primary-color-selected);
+}
+
+#startGameButton,
+#rollDiceButton {
+  font-size: 20px;
+  width: 98%;
+  padding: 20px;
+}
+
+#result {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+#resultDetail {
+  font-size: 18px;
+}
+
+#gameScreen {
+  display: none;
+  /* display: block; */
+}
+
+.dice-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.dice-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.dice-item .dice {
+  width: 60px;
+  height: 60px;
+  background: #f3f3f3;
+}
+
+.dice-item .score {
+  font-size: 24px;
+  font-weight: bold;
+  margin: auto;
+}
+
+/* input fields */
+input[type="text"],
+input[type="number"] {
+  font-size: 18px;
+  padding: 12px 20px;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.playerInfo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 7px;
+}
+
+.playerInfo-container .playerInfo-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#currentPlayerName {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#currentBalance {
+  font-weight: 700;
+  color: #c3ac32;
+}
+
+.bet-amount-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bet-amount-container label {
+  width: 12rem;
+}
+
+.bet-amount-container button {
+  width: 6rem;
+}
